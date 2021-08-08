@@ -1,12 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans&display=swap');
+
+body {
+    background: #2E5077;
+}
+
+header {
+    text-align: center;
+    font-family: Indie Flower, sans serif;
+    font-size: 20px;
+    letter-spacing: 10px;
+    color: white;
+}
+
 canvas {
-    border: solid red;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;    
+    border: solid white;
+    border-radius: 25px;
+}
+
+.flex {
+    display: flex;
+    padding-bottom: 25px;
+  }
+  
+.center {
+    justify-content: center;
+  }
+
+#start-button {
+    margin-right: 20px;
+}
+
+#startButton, #restartButton {
+    border-radius: 12px;
+    border: solid white;
+    padding: 10px 24px;
+    background-color: #22718F;
+    color: white;
 }
 
 .modal {
     display: none; 
     z-index: 1; 
     overflow: auto; 
-    background-color: #7AAFC6; 
+    background-color: #2E5077; 
     width: 300px;
     height: 300px;
     position: absolute;
@@ -19,10 +60,11 @@ canvas {
 }
 
 .modal-content {
-    background-color: #7AAFC6;
-    font-family: Anton, sans-serif;
-    font-size: 22px;
-    color: black;
+    background-color: #2E5077;
+    font-family: Indie Flower, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    color: white;
     letter-spacing: 4px;
     margin: auto;
     padding: 20px;
