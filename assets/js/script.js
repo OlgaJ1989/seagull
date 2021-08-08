@@ -22,6 +22,7 @@ let topLeft = 0;
 let topRight = 0;
 let bottomLeft = 0;
 let bottomRight = 0;
+let gameOver = false;
 
 //Load canvas background image
 let background = new Image()
@@ -84,8 +85,7 @@ function moveHut() {
     }
     if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
         //collision has occured
-        let hello = 'game over man!'
-        console.log(hello)
+        gameOver =true;        
     }
 }
 //Draw the hut to canvas
@@ -124,6 +124,7 @@ function drawChair() {
 //Main game loop
 function gameLoop() {
 
+    if (gameOver==false) {
     drawBackground()
     if (keysPressed[32] == true) {
         gullJump =1;
@@ -162,8 +163,11 @@ function gameLoop() {
     ctx.fillStyle = 'red';
     ctx.fillRect(seagullX-30,seagullY-50,80,80)
     setTimeout (gameLoop, 1000/speed)
+} else if (gameOver==true) {
+
 }
 
+}
 window.onkeyup = function(e) {keysPressed[e.keyCode] = false}
 window.onkeydown = function(e) {keysPressed[e.keyCode] = true}
 
@@ -174,7 +178,11 @@ window.onkeydown = function(e) {keysPressed[e.keyCode] = true}
 
 
 
-
+//Restart game
+document.querySelector('.restart').addEventListener('click', function(){
+    window.location.reload();
+    return false;
+  });
 
 
 //Call main game loop
