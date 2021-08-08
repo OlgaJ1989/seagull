@@ -62,7 +62,7 @@ function seagullLand() {
 function hutController() {
     hutTimer-=1;
     if (hutTimer<=0) {
-        hutTimer= 150 + Math.floor(Math.random()*200);
+        hutTimer= 150 + (50-speed) + Math.floor(Math.random()*200);
         hut = {id:hutCount, hutX:1100, hutY:400, hutW:120, hutH:140, cleared:false}
         hutCount++;
     }
@@ -111,7 +111,7 @@ function drawHut() {
 function chairController() {
     chairTimer-=1;
     if (chairTimer<=0) {
-        chairTimer= 75 + Math.floor(Math.random()*150);
+        chairTimer= 75 + (50-speed) + Math.floor(Math.random()*150);
         chair = {id:chairCount, chairX:1100, chairY:400, chairW:120, chairH:140, cleared:false}
         chairCount++;
     }
@@ -159,6 +159,7 @@ function drawScore() {
     ctx.fillStyle = "white";
     ctx.font = "20px Verdana"
     ctx.fillText( "Score: " +(Math.round(score/10)*10), 850,20)
+    ctx.fillText( "Speed: " +speed, 850,50)
 }
 //Main game loop
 function gameLoop() {
@@ -205,6 +206,9 @@ if (chairCount>0) {
     drawChair()
 }
 drawScore()
+if (score % 100 == 0 && score>0) {
+    speed += 4;
+}
 //draw seagull
 let seagull = new Image()
 seagull.src = 'assets/images/gullSmall3.png'
