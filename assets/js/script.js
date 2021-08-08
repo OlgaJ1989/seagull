@@ -18,6 +18,10 @@ let hutTimer = 60;
 let hutCount = 0;
 let chairTimer = 10;
 let chairCount = 0;
+let topLeft = 0;
+let topRight = 0;
+let bottomLeft = 0;
+let bottomRight = 0;
 
 //Load canvas background image
 let background = new Image()
@@ -65,13 +69,35 @@ function hutController() {
 //Change the hut position
 function moveHut() {    
     hut.hutX -= 10;
-}
 
+    if (seagullX-30>=hut.hutX-40 && seagullX-30<=hut.hutX+40 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
+        topLeft=1 
+    }
+    if (seagullX+50>=hut.hutX-40 && seagullX+50<=hut.hutX+40 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
+        topRight=1 
+    }
+    if (seagullX-30>=hut.hutX-40 && seagullX-30<=hut.hutX+40 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
+        bottomLeft=1 
+    }
+    if (seagullX+50>=hut.hutX-40 && seagullX+50<=hut.hutX+40 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
+        bottomRight=1 
+    }
+    if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
+        //collision has occured
+        let hello = 'game over man!'
+        console.log(hello)
+    }
+}
 //Draw the hut to canvas
 function drawHut() {
     let hutImg = new Image()
     hutImg.src = 'assets/images/hut5.png'
     ctx.drawImage(hutImg, hut.hutX -45, hut.hutY-45)
+    
+    ctx.beginPath()
+    ctx.rect(hut.hutX-40,hut.hutY-25,80,90)
+    ctx.stroke()
+
 }
 
 //Generate chair obstacle at random intervals
@@ -132,8 +158,9 @@ function gameLoop() {
     //draw seagull
     let seagull = new Image()
     seagull.src = 'assets/images/gullSmall3.png'
-    ctx.drawImage(seagull, seagullX -75, seagullY-65)
-    
+    ctx.drawImage(seagull, seagullX -90, seagullY-65)
+    ctx.fillStyle = 'red';
+    ctx.fillRect(seagullX-30,seagullY-50,80,80)
     setTimeout (gameLoop, 1000/speed)
 }
 
