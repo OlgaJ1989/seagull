@@ -63,7 +63,7 @@ function hutController() {
     hutTimer-=1;
     if (hutTimer<=0) {
         hutTimer= 150 + Math.floor(Math.random()*200);
-        hut = {id:hutCount, hutX:1100, hutY:400, hutW:120, hutH:140}
+        hut = {id:hutCount, hutX:1100, hutY:400, hutW:120, hutH:140, cleared:false}
         hutCount++;
     }
 }
@@ -86,8 +86,13 @@ function moveHut() {
     }
     if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
         //collision has occured
-        stopGame =true;        
+        stopGame =true;     
+        gameOver =true;   
     }
+    if (hut.hutX<=200 && hut.cleared==false) {
+        score+=50;
+        hut.cleared=true;
+}
 }
 //Draw the hut to canvas
 function drawHut() {
@@ -107,7 +112,7 @@ function chairController() {
     chairTimer-=1;
     if (chairTimer<=0) {
         chairTimer= 75 + Math.floor(Math.random()*150);
-        chair = {id:chairCount, chairX:1100, chairY:400, chairW:120, chairH:140}
+        chair = {id:chairCount, chairX:1100, chairY:400, chairW:120, chairH:140, cleared:false}
         chairCount++;
     }
 }
@@ -129,7 +134,12 @@ function moveChair() {
     }
     if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
         //collision has occured
-        stopGame =true;        
+        stopGame =true;  
+        gameOver =true;      
+    }
+    if (chair.chairX<=200 && chair.cleared==false) {
+            score+=50;
+            chair.cleared=true;
     }
 }
 
@@ -145,10 +155,16 @@ function drawChair() {
     ctx.stroke()
 */
 }
+function drawScore() {
+    ctx.fillStyle = "white";
+    ctx.font = "20px Verdana"
+    ctx.fillText( "Score: " +(Math.round(score/10)*10), 850,20)
+}
 //Main game loop
 function gameLoop() {
 
     if (stopGame==false) {
+        score++;
     drawBackground()
     if (keysPressed[32] == true) {
         gullJump =1;
@@ -177,7 +193,7 @@ function gameLoop() {
     
     
 } else if (stopGame == true) {
-    if (keysPressed[32] == true) {
+    if (keysPressed[32] == true && gameOver == false) {
         stopGame = false;
     }
 }
@@ -188,6 +204,7 @@ if (hutCount>0) {
 if (chairCount>0) {
     drawChair()
 }
+drawScore()
 //draw seagull
 let seagull = new Image()
 seagull.src = 'assets/images/gullSmall3.png'
