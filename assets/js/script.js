@@ -22,6 +22,7 @@ let topLeft = 0;
 let topRight = 0;
 let bottomLeft = 0;
 let bottomRight = 0;
+let stopGame = true;
 let gameOver = false;
 
 //Load canvas background image
@@ -71,33 +72,34 @@ function hutController() {
 function moveHut() {    
     hut.hutX -= 10;
 
-    if (seagullX-30>=hut.hutX-40 && seagullX-30<=hut.hutX+40 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
+    if (seagullX-30>=hut.hutX-35 && seagullX-30<=hut.hutX+35 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
         topLeft=1 
     }
-    if (seagullX+50>=hut.hutX-40 && seagullX+50<=hut.hutX+40 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
+    if (seagullX+50>=hut.hutX-35 && seagullX+50<=hut.hutX+35 && seagullY-50>=hut.hutY-25 && seagullY-50<=hut.hutY+65) {
         topRight=1 
     }
-    if (seagullX-30>=hut.hutX-40 && seagullX-30<=hut.hutX+40 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
+    if (seagullX-30>=hut.hutX-35 && seagullX-30<=hut.hutX+35 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
         bottomLeft=1 
     }
-    if (seagullX+50>=hut.hutX-40 && seagullX+50<=hut.hutX+40 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
+    if (seagullX+50>=hut.hutX-35 && seagullX+50<=hut.hutX+35 && seagullY+30>=hut.hutY-25 && seagullY+30<=hut.hutY+65) {
         bottomRight=1 
     }
     if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
         //collision has occured
-        gameOver =true;        
+        stopGame =true;        
     }
 }
 //Draw the hut to canvas
 function drawHut() {
     let hutImg = new Image()
     hutImg.src = 'assets/images/hut5.png'
-    ctx.drawImage(hutImg, hut.hutX -45, hut.hutY-45)
     
+    ctx.drawImage(hutImg, hut.hutX -45, hut.hutY-45)
+    /*
     ctx.beginPath()
-    ctx.rect(hut.hutX-40,hut.hutY-25,80,90)
+    ctx.rect(hut.hutX-35,hut.hutY-25,70,90)
     ctx.stroke()
-
+*/
 }
 
 //Generate chair obstacle at random intervals
@@ -113,18 +115,40 @@ function chairController() {
 //Change the chair position
 function moveChair() {    
     chair.chairX -= 10;
+    if (seagullX-30>=chair.chairX-45 && seagullX-30<=chair.chairX+15 && seagullY-50>=chair.chairY-45 && seagullY-50<=chair.chairY+50) {
+        topLeft=1 
+    }
+    if (seagullX+50>=chair.chairX-45 && seagullX+50<=chair.chairX+15 && seagullY-50>=chair.chairY-45 && seagullY-50<=chair.chairY+50) {
+        topRight=1 
+    }
+    if (seagullX-30>=chair.chairX-45 && seagullX-30<=chair.chairX+15 && seagullY+30>=chair.chairY-45 && seagullY+30<=chair.chairY+50) {
+        bottomLeft=1 
+    }
+    if (seagullX+50>=chair.chairX-45 && seagullX+50<=chair.chairX+15 && seagullY+30>=chair.chairY-45 && seagullY+30<=chair.chairY+50) {
+        bottomRight=1 
+    }
+    if (topLeft==1 || topRight==1 || bottomLeft==1 || bottomRight==1) {
+        //collision has occured
+        stopGame =true;        
+    }
 }
 
 //Draw the chair obstacle to canvas
 function drawChair() {
     let chairImg = new Image()
     chairImg.src = 'assets/images/chair5.png'
-    ctx.drawImage(chairImg, chair.chairX -45, chair.chairY-45)
+    ctx.drawImage(chairImg, chair.chairX -45, chair.chairY-30)
+    
+    /*
+    ctx.beginPath()
+    ctx.rect(chair.chairX-45,chair.chairY-30,60,80)
+    ctx.stroke()
+*/
 }
 //Main game loop
 function gameLoop() {
 
-    if (gameOver==false) {
+    if (stopGame==false) {
     drawBackground()
     if (keysPressed[32] == true) {
         gullJump =1;
@@ -150,22 +174,29 @@ function gameLoop() {
     
     seagullLand()
     seagullJump()
-    if (hutCount>0) {
-        drawHut()
+    
+    
+} else if (stopGame == true) {
+    if (keysPressed[32] == true) {
+        stopGame = false;
     }
-    if (chairCount>0) {
-        drawChair()
-    }
-    //draw seagull
-    let seagull = new Image()
-    seagull.src = 'assets/images/gullSmall3.png'
-    ctx.drawImage(seagull, seagullX -90, seagullY-65)
-    ctx.fillStyle = 'red';
-    ctx.fillRect(seagullX-30,seagullY-50,80,80)
-    setTimeout (gameLoop, 1000/speed)
-} else if (gameOver==true) {
-
 }
+
+if (hutCount>0) {
+    drawHut()
+}
+if (chairCount>0) {
+    drawChair()
+}
+//draw seagull
+let seagull = new Image()
+seagull.src = 'assets/images/gullSmall3.png'
+ctx.drawImage(seagull, seagullX -90, seagullY-65)
+/*
+ctx.fillStyle = 'red';
+ctx.fillRect(seagullX-30,seagullY-50,80,80)
+*/
+setTimeout (gameLoop, 1000/speed)
 
 }
 window.onkeyup = function(e) {keysPressed[e.keyCode] = false}
