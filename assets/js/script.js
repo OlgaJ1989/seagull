@@ -15,9 +15,10 @@ background.onload = function(){
 
 function gameLoop() {
 
-    ctx.fillStyle = "green";
-    ctx.fillRect(seagullX -50, seagullY -50, 50, 50)
-
+    let seagull = new Image()
+    seagull.src = 'assets/images/gullSmall.png'
+    ctx.drawImage(seagull, seagullX -90, seagullY-90)
+    
     setTimeout (gameLoop, 1000/speed)
 }
 
