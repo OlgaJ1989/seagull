@@ -1,31 +1,35 @@
 let canvas = document.getElementById('game-area')
 let ctx = canvas.getContext('2d')
 let backgroundCount = 0;
-
+//modal
 let modal = document.getElementById("modal");
 let button = document.getElementById("startButton");
 let span = document.getElementsByClassName("close")[0];
-
+//seagull position coordinates
 let seagullX = 200;
 let seagullY = 400;
+//speed at which game loops
 let speed = 15;
 let score = 0;
-
+//seagull jumping calculations
 let acceleration = 0;
 let gravity = 3;
 let gullFloor = 400;
 let gullState = 0;
 let gullJump = 0;
+//array storing state of key down or up
 let keysPressed = {};
-
+//obstacle generation
 let hutTimer = 60;
 let hutCount = 0;
 let chairTimer = 10;
 let chairCount = 0;
+//collision detection
 let topLeft = 0;
 let topRight = 0;
 let bottomLeft = 0;
 let bottomRight = 0;
+//game states
 let stopGame = true;
 let gameOver = false;
 
@@ -53,6 +57,7 @@ function seagullJump() {
         gullState = 1;
     }
 }
+
 //Check the position of the seagull and end the jump if conditions met
 function seagullLand() {
     if (seagullY >= gullFloor) {
@@ -178,8 +183,6 @@ function moveChair() {
         score += 50;
         chair.cleared = true;
     }
-
-    
 }
 
 //Draw the chair obstacle to canvas
@@ -193,14 +196,16 @@ function drawScore() {
     ctx.fillStyle = "white";
     ctx.font = "20px Verdana"
     ctx.fillText("Score: " + (Math.round(score / 10) * 10), 850, 20)
-    ctx.fillText("Speed: " + speed, 850, 50)
+    
 }
 
 //Main game loop
 function gameLoop() {
     if (stopGame == false) {
         score++;
+
         drawBackground()
+
         if (keysPressed[32] == true) {
             gullJump = 1;
         } else if (keysPressed[32] == false) {
@@ -213,48 +218,52 @@ function gameLoop() {
             acceleration = 0;
         }
         seagullY += acceleration;
-
+        
         hutController()
+        
         if (hutCount > 0) {
             moveHut()
         }
+        
         chairController()
         if (chairCount > 0) {
             moveChair()
         }
-
+        
         seagullLand()
         seagullJump()
-
 
     } else if (stopGame == true) {
         if (keysPressed[32] == true && gameOver == false) {
             stopGame = false;
         }
         if (gameOver==true) {
-                ctx.fillStyle = 'yellow';
-                ctx.font = '65px Anton';
-                ctx.fillText('Game Over!', canvas.width / 6.5, canvas.height / 2);
+            ctx.fillStyle = 'yellow';
+            ctx.font = '150px Indie Flower';
+            ctx.fillText('Game Over!', canvas.width / 6.5, canvas.height / 2);
         }
     }
-
+    
     if (hutCount > 0) {
         drawHut()
     }
     if (chairCount > 0) {
         drawChair()
     }
+    
     drawScore()
+
     if (score % 100 == 0 && score > 0) {
         speed += 4;
     }
+    
     //draw seagull
     let seagull = new Image()
     seagull.src = 'assets/images/gullSmall3.png'
     ctx.drawImage(seagull, seagullX - 90, seagullY - 65)
     setTimeout(gameLoop, 1000 / speed)
-
 }
+
 window.onkeyup = function (e) {
     keysPressed[e.keyCode] = false
 }
