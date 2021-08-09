@@ -194,8 +194,8 @@ function drawChair() {
 
 function drawScore() {
     ctx.fillStyle = "white";
-    ctx.font = "20px Verdana"
-    ctx.fillText("Score: " + (Math.round(score / 10) * 10), 850, 20)
+    ctx.font = "30px Indie Flower"
+    ctx.fillText("Score: " + (Math.round(score / 10) * 10), 850, 30)
     
 }
 
@@ -256,7 +256,7 @@ function gameLoop() {
     if (score % 100 == 0 && score > 0) {
         speed += 4;
     }
-    
+
     //draw seagull
     let seagull = new Image()
     seagull.src = 'assets/images/gullSmall3.png'
