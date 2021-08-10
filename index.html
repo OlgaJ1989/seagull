@@ -18,33 +18,44 @@
 </head>
 
 <body class="body">
+    <!--Header containing the game title-->
     <header id="game-title">
         <h1>Chip Raider</h1>
     </header>
+    <!--Modal displaying instructions; loaded on Start button being pressed-->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Press Space to start the game.<br><br> Have fun!</p>
+            <p>Press Space to start the game and make the seagull jump over obstacles. The speed and difficulty will
+                increase gradually. To play the game on a touch screen, please press the Jump button.<br><br> Have fun!
+            </p>
         </div>
     </div>
     <div class="flex center">
+        <!--Start Button-->
         <div class="buttons" id="start-button">
             <button id="startButton">Start Game</button>
         </div>
+        <!--Restart Button-->
         <div class="buttons" id="restart">
             <button class="restart" id="restartButton">Restart</button>
         </div>
     </div>
+    <!--Main game area canvas-->
     <main id="main-area">
         <canvas id="game-area" width="1000" height="500"></canvas>
         <img id="background">
         <img id="seagull">
     </main>
+    <!--Jump button for mobile/touchscreen devices-->
     <div class="buttons flex center" id="spaceBar">
         <button class="jump" id="jump">Jump</button>
     </div>
+    <!--Footer-->
     <footer class="footer">
+        <p>Created for educational purposes by Olga Jasinska</p>
     </footer>
+    <!--JavaScript script-->
     <script src="assets/js/script.js"></script>
 </body>
 
