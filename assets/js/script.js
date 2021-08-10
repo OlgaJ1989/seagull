@@ -20,6 +20,8 @@ let gullState = 0;
 let gullJump = 0;
 //array storing state of key down or up
 let keysPressed = {};
+let mouseClicked = false;
+let screenTouched = false;
 //obstacle generation
 let hutTimer = 60;
 let hutCount = 0;
@@ -207,12 +209,14 @@ function gameLoop() {
         score++;
 
         drawBackground();
-
-        if (keysPressed[32] == true) {
+        gullJump =0;
+        if (keysPressed[32] == true || mouseClicked == true || screenTouched == true) {
             gullJump = 1;
-        } else if (keysPressed[32] == false) {
-            gullJump = 0;
         }
+         /*
+        else if (keysPressed[32] == false) {
+            gullJump = 0;
+        }*/
         //if the gull is in the air, apply gravity
         if (gullState == 1) {
             acceleration += gravity;
@@ -273,6 +277,20 @@ window.onkeydown = function (e) {
     keysPressed[e.keyCode] = true;
 };
 
+canvas.onmousedown = function (e) {
+    mouseClicked = true;
+    console.log(mouseClicked);
+};
+canvas.onmouseup = function (e) {
+    mouseClicked = false;
+    console.log(mouseClicked);
+};
+canvas.touchstart = function (e) {
+    screenTouched = true;
+};
+canvas.touchend = function(e) {
+    screenTouched =false;
+};
 //Restart game
 document.querySelector('.restart').addEventListener('click', function () {
     window.location.reload();
