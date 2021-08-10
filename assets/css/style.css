@@ -35,7 +35,7 @@ canvas {
     margin-right: 20px;
 }
 
-#startButton, #restartButton {
+#startButton, #restartButton, #jump {
     border-radius: 12px;
     border: solid white;
     padding: 10px 24px;
