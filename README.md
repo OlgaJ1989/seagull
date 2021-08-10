@@ -4,7 +4,7 @@ Chip Raider is a game in which the user takes a form of a seagull jumping over o
 
 The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
-![Mockup](https://github.com/OlgaJ1989/seagull/blob/master/docs/mockup.png)
+![Mockup](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/mockup.png)
 
 ## Features
 
