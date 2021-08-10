@@ -98,10 +98,16 @@ p {
     text-align: center;
   }
 
-  /* Media Queries */
+/* Media Queries */
 
 @media (max-width: 1060px) {
     canvas {
         width: 90%;
+    }
+}
+
+@media (max-width: 330px) {
+    header {
+        font-size: 15px;
     }
 }

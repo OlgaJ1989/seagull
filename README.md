@@ -1,104 +1,157 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Chip Raider
 
-Welcome OlgaJ1989,
+Chip Raider is a game in which the user takes a form of a seagull jumping over obstacles on the beach. This simple game is targeted at casual players of any age but it may appeal especially to lovers of classic arcade games.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
-## Gitpod Reminders
+![Mockup](https://github.com/OlgaJ1989/seagull/blob/master/docs/mockup.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
 
-`python3 -m http.server`
+### Existing features
 
-A blue button should appear to click: _Make Public_,
+* Navigation Bar 
+    * Includes direct links to the Home, Walking Tips, Gallery, and Contacts Us pages, allowing the user to easily navigate between them. 
 
-Another blue button should appear to click: _Open Browser_.
+    ![Navigation](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/navigation.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* Landing page image with overlaying page title
+    * The home.html page (Home) includes a picture of the countryside, with the title of the wesbsite, Sussex Walks, added as overlaying text. The title acts as a centerpiece of the image and catches the eye instantly.
 
-A blue button should appear to click: _Make Public_,
+    ![Title](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/title.png)
 
-Another blue button should appear to click: _Open Browser_.
+* Intro
+    * A small section explaining the purpose of the website and the type of walks people can find in Sussex. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    ![Intro](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/intro.png)
 
-To log into the Heroku toolbelt CLI:
+* Popular Walks section
+    * A section describing four chosen walks with images from along the routes and embedded Google maps for each. The images clearly showcase the landmarks walkers can expect to see and the clickable maps provide the exact route. The design is responsive - users will see 4 columns next to each other on bigger screens and 1 column at a time on smaller devices.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    ![Walks](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/walks.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Interactive footer across all pages
+    * It consists of clickable icons linking the user to a choice of social media platforms (Facebook, Instagram, YouTube, Twitter). All links open in new tabs so the user does not have to leave the Sussex Walks page.
 
-------
+    ![Footer](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/footer.png)
 
-## Release History
+* Gallery
+    * The Gallery located in gallery.html will provide the user with a collection of photographs showcasing landmarks they will be able to see during their walks. Responsive design of the gallery means the images will still be viewed in a good reolution on a smaller screen.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    ![Gallery](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/gallery.png)  
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* Contact Us form
+    * The contact.html page consists of a form which users can use in order to contact the admin with any questions / queries. 
+    
+    ![Form](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/form.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* A favicon
+    * A favicon has been added to make it easier for users to find the Sussex Walks page if multiple tabs are open. 
+    
+    ![Favicon](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/favicon.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Features left to implement
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+I would like to include another page consisting of a form and called Design Your Walk or similar. The form would consist of a short survey, covering areas such as difficulty, length, and type of a walk. Radio buttons and checkboxes would be provided for the user to be able to make their choices, which they could then submit to the admin to receive personalised walk ideas tailored to their choices.  
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Technologies
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* HTML has been used to structure the website.
+* CSS has been used to style the website.
+* [Font Awesome](https://fontawesome.com/) icons have been used on the Walking Tips page and for social media links in the Footer.    
+* [Google Fonts](https://fonts.google.com/) have been used to import Amatic SC and Josefin Slab fonts. 
+* [Colormind](http://colormind.io) was used to determine the color pallette for the website.
+* [Hex Color Tool](https://www.hexcolortool.com/) was used to convert Hex to RGBA.
+* [Favicon](https://favicon.io/) was used to create the favicon for the website.
+* [Techsini](http://techsini.com/multi-mockup/index.php) mockup generator was used to create the mockup image for the readme.md file. 
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) were used to inspect elements of the website and test different styles. 
+* [GitHub](https://github.com/) has been used to store the code, images, and other contents of the website. 
+* [Git Pages](https://pages.github.com/) was used to deploy the website to the web.
+* [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
+* [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) was used to run an audit of the website. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Testing
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Check the responsiveness of the website on different screen sizes across different browsers (Chrome, Firefox, Opera).
+    * Test:
+        1. Open the website in each of the aforementioned browsers.
+        1. Right-click on the screen and choose 'Inspect' ('Inspect element' on Opera).
+        1. Grab and drag the responsive window slowly down to 300px and then back again, checking that everything is displayed correctly in each size / breakpoint.
+    * Result:
+        * All elements are responsive and display correctly in each of the browsers and in each of the window sizes.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* Check that the links in the navigation bar navigate to correct pages. 
+    * Test:
+        1. Open the website in a browser.
+        1. Click on all navigation items (Home, Walking Tips, Gallery, Contact Us) one by one to make sure the attached links are correct and that they lead the user to the correct parts of the website.
+    * Result:
+        * All links working and directing user to the correct pages.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* Check that the links to social media pages in the Footer work and open in new tabs.
+    * Test:
+        1. Open the website in a browser.
+        1. Click on all social media links (Facebook, Twitter, YouTube, Instagram) one by one to make sure that the links are in working order and that they all open in a separate tab.
+    * Result:
+        * All links are working and all of them open in separate / new tabs.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Check that the name of the page user is currently on is highlighted (underlined) in the navigation bar.
+    * Test:
+        1. Open the website.
+        1. Open each of the pages in the navigation bar to see whether the active page is underlined in the menu.
+    * Result:
+        * Each of the navigation bar elements becomes underlined when the page is active.
+    
+* Check that each of the navigation bar elements displays as underlined when hovered over.
+    * Test:
+        1. Open the website.
+        1. Hover over each of the navigation bar elements with the cursor to make sure that they display and underline when hovered over. 
+    * Result:
+        * Each element becomes udenrlined when hovered over with a mouse cursor.
+                
+* Check validation of the Contact Us form.
+    * Test:
+        1. Open the website in a browser and navigate to the Contact Us page.
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
+    * Result: 
+        * The form cannot be submitted until each of the input fields has been filled in correctly so the validation is working.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Validator testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received the following error notification: "Element h3 not allowed as child of element label in this context." referring to all input labels in the Contact Us form. To fix this, I have changed all h3 elements to span elements as per the advice found in [this Stackoverflow post](https://stackoverflow.com/questions/50068995/element-h3-not-allowed-as-child-of-element-label-in-this-context-html). No further errors have been found after I applied this fix and passed the code through the validator again.
+* CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+* Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
+    * There was not enough contrast between the background and font of the 'Submit' button in the Contact Us form. I have corrected this by changing the background color #559e79 to #32644b. No further errors have been found after I applied this fix and passed the site through the validator again.
+    * Two of the aria-labels in the Gallery page were identical. I have corrected this by changing the name of one of them. No further errors have been found after I applied thise fix and passed the site through the validator again.
 
-------
+### Unfixed bugs
 
-## FAQ about the uptime script
+No other bugs found.
 
-**Why have you added this script?**
+## Deployment
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+Sussex Walks was deployed to GitHub Pages by following the below steps:
+1. Navigate to the ['sussex-walks' repository](https://github.com/OlgaJ1989/sussex-walks) on GitHub.
+1. Navigate to the 'Settings' tab.
+1. Navigate to 'Pages' from the menu on the left. 
+1. Select 'master' branch in the source drop-down.
+1. Click 'Save'.
+1. A link to the live deployed page is generated and can be found here: https://olgaj1989.github.io/sussex-walks/
 
-**How will this affect me?**
+## Credits
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Content 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The written content has been developed by me, Olga Jasinska, using my past experience of walking in and around of Brighton. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Media 
 
-**So….?**
+All photos have been taken from my private collection or provided by my partner Ben Butler with his permission. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Code
 
-**Can I opt out?**
+When creating flexbox and media queries I used tutorials and some base code from [W3Schools](https://www.w3schools.com/css/css3_flexbox.asp) modules on CSS Flexbox and CSS Flex Responsive.  
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Acknowledgements
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+I'd like to thank my mentor Daisy McGirr for her guidance throughout this project.
