@@ -1,5 +1,6 @@
-let canvas = document.getElementById('game-area')
-let ctx = canvas.getContext('2d')
+/*jshint esversion: 6 */
+let canvas = document.getElementById('game-area');
+let ctx = canvas.getContext('2d');
 let backgroundCount = 0;
 //modal
 let modal = document.getElementById("modal");
@@ -33,12 +34,14 @@ let bottomRight = 0;
 let stopGame = true;
 let gameOver = false;
 
+let hut;
+let chair;
 //Load canvas background image
-let background = new Image()
-background.src = 'assets/images/seafront_03.jpg'
+let background = new Image();
+background.src = 'assets/images/seafront_03.jpg';
 background.onload = function () {
     ctx.drawImage(background, 0, 0);
-}
+};
 
 //Calculate background position and display image 
 function drawBackground() {
@@ -78,8 +81,8 @@ function hutController() {
             hutY: 400,
             hutW: 120,
             hutH: 140,
-            cleared: false
-        }
+            cleared: false,
+        };
         hutCount++;
     }
 }
@@ -88,29 +91,29 @@ function hutController() {
 function moveHut() {
     hut.hutX -= 10;
 
-    if (seagullX - 30 >= hut.hutX - 35 
-        && seagullX - 30 <= hut.hutX + 35 
-        && seagullY - 50 >= hut.hutY - 25 
-        && seagullY - 50 <= hut.hutY + 65) {
-        topLeft = 1
+    if (seagullX - 30 >= hut.hutX - 35 && 
+        seagullX - 30 <= hut.hutX + 35 && 
+        seagullY - 50 >= hut.hutY - 25 && 
+        seagullY - 50 <= hut.hutY + 65) {
+        topLeft = 1;
     }
-    if (seagullX + 50 >= hut.hutX - 35 
-        && seagullX + 50 <= hut.hutX + 35 
-        && seagullY - 50 >= hut.hutY - 25 
-        && seagullY - 50 <= hut.hutY + 65) {
-        topRight = 1
+    if (seagullX + 50 >= hut.hutX - 35 &&
+        seagullX + 50 <= hut.hutX + 35 &&
+        seagullY - 50 >= hut.hutY - 25 &&
+        seagullY - 50 <= hut.hutY + 65) {
+        topRight = 1;
     }
-    if (seagullX - 30 >= hut.hutX - 35 
-        && seagullX - 30 <= hut.hutX + 35 
-        && seagullY + 30 >= hut.hutY - 25 
-        && seagullY + 30 <= hut.hutY + 65) {
-        bottomLeft = 1
+    if (seagullX - 30 >= hut.hutX - 35 &&
+        seagullX - 30 <= hut.hutX + 35 &&
+        seagullY + 30 >= hut.hutY - 25 &&
+        seagullY + 30 <= hut.hutY + 65) {
+        bottomLeft = 1;
     }
-    if (seagullX + 50 >= hut.hutX - 35 
-        && seagullX + 50 <= hut.hutX + 35 
-        && seagullY + 30 >= hut.hutY - 25 
-        && seagullY + 30 <= hut.hutY + 65) {
-        bottomRight = 1
+    if (seagullX + 50 >= hut.hutX - 35 &&
+        seagullX + 50 <= hut.hutX + 35 &&
+        seagullY + 30 >= hut.hutY - 25 &&
+        seagullY + 30 <= hut.hutY + 65) {
+        bottomRight = 1;
     }
     if (topLeft == 1 || topRight == 1 || bottomLeft == 1 || bottomRight == 1) {
         //collision has occured
@@ -125,9 +128,9 @@ function moveHut() {
 
 //Draw the hut to canvas
 function drawHut() {
-    let hutImg = new Image()
-    hutImg.src = 'assets/images/hut5.png'
-    ctx.drawImage(hutImg, hut.hutX - 45, hut.hutY - 45)
+    let hutImg = new Image();
+    hutImg.src = 'assets/images/hut5.png';
+    ctx.drawImage(hutImg, hut.hutX - 45, hut.hutY - 45);
 }
 
 //Generate chair obstacle at random intervals
@@ -141,8 +144,8 @@ function chairController() {
             chairY: 400,
             chairW: 120,
             chairH: 140,
-            cleared: false
-        }
+            cleared: false,
+        };
         chairCount++;
     }
 }
@@ -150,29 +153,29 @@ function chairController() {
 //Change the chair position
 function moveChair() {
     chair.chairX -= 10;
-    if (seagullX - 30 >= chair.chairX - 45 
-        && seagullX - 30 <= chair.chairX + 15 
-        && seagullY - 50 >= chair.chairY - 45 
-        && seagullY - 50 <= chair.chairY + 50) {
-        topLeft = 1
+    if (seagullX - 30 >= chair.chairX - 45 &&
+        seagullX - 30 <= chair.chairX + 15 &&
+        seagullY - 50 >= chair.chairY - 45 &&
+        seagullY - 50 <= chair.chairY + 50) {
+        topLeft = 1;
     }
-    if (seagullX + 50 >= chair.chairX - 45 
-        && seagullX + 50 <= chair.chairX + 15 
-        && seagullY - 50 >= chair.chairY - 45 
-        && seagullY - 50 <= chair.chairY + 50) {
-        topRight = 1
+    if (seagullX + 50 >= chair.chairX - 45 &&
+        seagullX + 50 <= chair.chairX + 15 &&
+        seagullY - 50 >= chair.chairY - 45 &&
+        seagullY - 50 <= chair.chairY + 50) {
+        topRight = 1;
     }
-    if (seagullX - 30 >= chair.chairX - 45 
-        && seagullX - 30 <= chair.chairX + 15 
-        && seagullY + 30 >= chair.chairY - 45 
-        && seagullY + 30 <= chair.chairY + 50) {
-        bottomLeft = 1
+    if (seagullX - 30 >= chair.chairX - 45 &&
+        seagullX - 30 <= chair.chairX + 15 &&
+        seagullY + 30 >= chair.chairY - 45 &&
+        seagullY + 30 <= chair.chairY + 50) {
+        bottomLeft = 1;
     }
-    if (seagullX + 50 >= chair.chairX - 45 
-        && seagullX + 50 <= chair.chairX + 15 
-        && seagullY + 30 >= chair.chairY - 45 
-        && seagullY + 30 <= chair.chairY + 50) {
-        bottomRight = 1
+    if (seagullX + 50 >= chair.chairX - 45 &&
+        seagullX + 50 <= chair.chairX + 15 &&
+        seagullY + 30 >= chair.chairY - 45 &&
+        seagullY + 30 <= chair.chairY + 50) {
+        bottomRight = 1;
     }
     if (topLeft == 1 || topRight == 1 || bottomLeft == 1 || bottomRight == 1) {
         //collision has occured
@@ -187,16 +190,15 @@ function moveChair() {
 
 //Draw the chair obstacle to canvas
 function drawChair() {
-    let chairImg = new Image()
-    chairImg.src = 'assets/images/chair5.png'
-    ctx.drawImage(chairImg, chair.chairX - 45, chair.chairY - 30)
+    let chairImg = new Image();
+    chairImg.src = 'assets/images/chair5.png';
+    ctx.drawImage(chairImg, chair.chairX - 45, chair.chairY - 30);
 }
 
 function drawScore() {
     ctx.fillStyle = "white";
-    ctx.font = "30px Indie Flower"
-    ctx.fillText("Score: " + (Math.round(score / 10) * 10), 850, 30)
-    
+    ctx.font = "30px Indie Flower";
+    ctx.fillText("Score: " + (Math.round(score / 10) * 10), 850, 30);
 }
 
 //Main game loop
@@ -204,7 +206,7 @@ function gameLoop() {
     if (stopGame == false) {
         score++;
 
-        drawBackground()
+        drawBackground();
 
         if (keysPressed[32] == true) {
             gullJump = 1;
@@ -218,58 +220,58 @@ function gameLoop() {
             acceleration = 0;
         }
         seagullY += acceleration;
-        
-        hutController()
-        
+
+        hutController();
+
         if (hutCount > 0) {
-            moveHut()
+            moveHut();
         }
-        
-        chairController()
+
+        chairController();
         if (chairCount > 0) {
-            moveChair()
+            moveChair();
         }
-        
-        seagullLand()
-        seagullJump()
+
+        seagullLand();
+        seagullJump();
 
     } else if (stopGame == true) {
         if (keysPressed[32] == true && gameOver == false) {
             stopGame = false;
         }
-        if (gameOver==true) {
+        if (gameOver == true) {
             ctx.fillStyle = 'yellow';
             ctx.font = '150px Indie Flower';
             ctx.fillText('Game Over!', canvas.width / 6.5, canvas.height / 2);
         }
     }
-    
+
     if (hutCount > 0) {
-        drawHut()
+        drawHut();
     }
     if (chairCount > 0) {
-        drawChair()
+        drawChair();
     }
-    
-    drawScore()
+
+    drawScore();
 
     if (score % 100 == 0 && score > 0) {
         speed += 4;
     }
 
     //draw seagull
-    let seagull = new Image()
-    seagull.src = 'assets/images/gullSmall3.png'
-    ctx.drawImage(seagull, seagullX - 90, seagullY - 65)
-    setTimeout(gameLoop, 1000 / speed)
+    let seagull = new Image();
+    seagull.src = 'assets/images/gullSmall3.png';
+    ctx.drawImage(seagull, seagullX - 90, seagullY - 65);
+    setTimeout(gameLoop, 1000 / speed);
 }
 
 window.onkeyup = function (e) {
-    keysPressed[e.keyCode] = false
-}
+    keysPressed[e.keyCode] = false;
+};
 window.onkeydown = function (e) {
-    keysPressed[e.keyCode] = true
-}
+    keysPressed[e.keyCode] = true;
+};
 
 //Restart game
 document.querySelector('.restart').addEventListener('click', function () {
@@ -278,14 +280,14 @@ document.querySelector('.restart').addEventListener('click', function () {
 });
 
 // Open the modal when Start Game button clicked 
-button.onclick = function() {
+button.onclick = function () {
     modal.style.display = "block";
-  }
-  
+};
+
 // Close the modal when <span> (x) clicked
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
-}
+};
 
 //Call main game loop
-gameLoop()
+gameLoop();
