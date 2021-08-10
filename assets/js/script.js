@@ -243,6 +243,9 @@ function gameLoop() {
         if (keysPressed[32] == true && gameOver == false) {
             stopGame = false;
         }
+        if (screenTouched == true && gameOver == false) {
+            stopGame = false;
+        }
         if (gameOver == true) {
             ctx.fillStyle = 'yellow';
             ctx.font = '150px Indie Flower';
