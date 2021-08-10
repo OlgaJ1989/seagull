@@ -23,6 +23,8 @@ let keysPressed = {};
 let mouseClicked = false;
 let screenTouched = false;
 //obstacle generation
+let hut;
+let chair;
 let hutTimer = 60;
 let hutCount = 0;
 let chairTimer = 10;
@@ -35,9 +37,6 @@ let bottomRight = 0;
 //game states
 let stopGame = true;
 let gameOver = false;
-
-let hut;
-let chair;
 //Load canvas background image
 let background = new Image();
 background.src = 'assets/images/seafront_03.jpg';
@@ -271,7 +270,20 @@ function gameLoop() {
     seagull.src = 'assets/images/gullSmall3.png';
     ctx.drawImage(seagull, seagullX - 90, seagullY - 65);
     setTimeout(gameLoop, 1000 / speed);
+    screenTouched = false;
+    document.getElementById("jump").onclick = function(e) {
+        screenTouched = true;
+    } ;
 }
+
+
+document.getElementById("jump").ontouchstart = function(e) {
+    screenTouched = true;
+} ;
+document.getElementById("jump").ontouchend = function(e) {
+    screenTouched = false;
+} ;
+
 
 window.onkeyup = function (e) {
     keysPressed[e.keyCode] = false;
@@ -282,18 +294,18 @@ window.onkeydown = function (e) {
 
 canvas.onmousedown = function (e) {
     mouseClicked = true;
-    console.log(mouseClicked);
 };
 canvas.onmouseup = function (e) {
     mouseClicked = false;
     console.log(mouseClicked);
 };
-canvas.touchstart = function (e) {
+window.ontouchstart = function (e) {
     screenTouched = true;
 };
-canvas.touchend = function(e) {
+window.ontouchend = function(e) {
     screenTouched =false;
 };
+
 //Restart game
 document.querySelector('.restart').addEventListener('click', function () {
     window.location.reload();
