@@ -300,14 +300,14 @@ canvas.onmouseup = function (e) {
     console.log(mouseClicked);
 };
 //check for mobile input
-/*
+
 window.ontouchstart = function (e) {
     screenTouched = true;
 };
 window.ontouchend = function(e) {
     screenTouched =false;
 };
-*/
+
 //Restart game
 document.querySelector('.restart').addEventListener('click', function () {
     window.location.reload();
