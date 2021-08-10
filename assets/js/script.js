@@ -274,24 +274,24 @@ function gameLoop() {
     document.getElementById("jump").onclick = function(e) {
         screenTouched = true;
     } ;
-}
-
-
+};
+/*
 document.getElementById("jump").ontouchstart = function(e) {
     screenTouched = true;
 } ;
 document.getElementById("jump").ontouchend = function(e) {
     screenTouched = false;
 } ;
+*/
 
-
+//check for key input
 window.onkeyup = function (e) {
     keysPressed[e.keyCode] = false;
 };
 window.onkeydown = function (e) {
     keysPressed[e.keyCode] = true;
 };
-
+//check for mouse clicks on canvas
 canvas.onmousedown = function (e) {
     mouseClicked = true;
 };
@@ -299,13 +299,15 @@ canvas.onmouseup = function (e) {
     mouseClicked = false;
     console.log(mouseClicked);
 };
+//check for mobile input
+/*
 window.ontouchstart = function (e) {
     screenTouched = true;
 };
 window.ontouchend = function(e) {
     screenTouched =false;
 };
-
+*/
 //Restart game
 document.querySelector('.restart').addEventListener('click', function () {
     window.location.reload();
