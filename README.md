@@ -32,7 +32,7 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
     ![Modal](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/modal.png) 
 
 8. Game Over warning/message
-    * When the seagull finally collides with an obstacle, the game is stopped and the user is greated with a 'Game Over!' announcement. They can then press the Restart button and start the game again.
+    * When the seagull finally collides with an obstacle, the game is stopped and the user is greeted with a 'Game Over!' announcement. They can then press the Restart button and start the game again.
 
     ![Game Over](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/over.PNG)  
 
@@ -50,8 +50,8 @@ I am considering adding more obstacles to make the game more interesting and var
 
 * HTML has been used to structure the website.
 * CSS has been used to style the website.
-* [Font Awesome](https://fontawesome.com/) icons have been used on the Walking Tips page and for social media links in the Footer.    
-* [Google Fonts](https://fonts.google.com/) have been used to import Amatic SC and Josefin Slab fonts. 
+* JavaScript was used to create the game and all its interactive elements.    
+* [Google Fonts](https://fonts.google.com/) have been used to import Indie Flower and Open Sans fonts. 
 * [Colormind](http://colormind.io) was used to determine the color pallette for the website.
 * [Hex Color Tool](https://www.hexcolortool.com/) was used to convert Hex to RGBA.
 * [Favicon](https://favicon.io/) was used to create the favicon for the website.
