@@ -159,7 +159,7 @@ I am considering adding more obstacles to make the game more interesting and var
 
 ### Unfixed bugs
 
-No other bugs found apart from the ones outlined above.
+No other bugs found.
 
 
 ## Deployment
@@ -189,6 +189,12 @@ I do not own rights to any of the above-mentioned content - I have used it solel
 ### Code
 
 When creating media queries and the modal, I used tutorials and some base code from [W3Schools](https://www.w3schools.com/css/css3_flexbox.asp) modules on CSS Flexbox and Modal Boxes.  
+
+I have used advice and some base code from [this Stackoverflow post](https://stackoverflow.com/questions/1828613/check-if-a-key-is-down) to work out how to implement the onkeyup / onkeydown events (lines 282-288). 
+
+I have used advice and code from [this TeamTreehouse post](https://teamtreehouse.com/community/any-one-know-how-to-make-a-restart-button) to implement the Restart Game function (lines 305-309).
+
+https://teamtreehouse.com/community/any-one-know-how-to-make-a-restart-button
 
 ### Acknowledgements
 
