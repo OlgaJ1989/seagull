@@ -194,8 +194,6 @@ I have used advice and some base code from [this Stackoverflow post](https://sta
 
 I have used advice and code from [this TeamTreehouse post](https://teamtreehouse.com/community/any-one-know-how-to-make-a-restart-button) to implement the Restart Game function (lines 305-309).
 
-https://teamtreehouse.com/community/any-one-know-how-to-make-a-restart-button
-
 ### Acknowledgements
 
 As usual, I'd like to thank my mentor Daisy McGirr for her guidance throughout this project.
