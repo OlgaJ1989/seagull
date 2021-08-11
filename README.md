@@ -153,9 +153,9 @@ I am considering adding more obstacles to make the game more interesting and var
 
 ![JS Validation](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/js-validation.PNG)
 
-* Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
-    * Similarly to what happened when I was testing the HTML code, I received a warning that read "Missing alt text" on the seagull and background images. As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.
+* Accessibility - no errors were found when code was passed through the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) 
     
+![Accessibility](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/accessibility.PNG)
 
 ### Unfixed bugs
 
