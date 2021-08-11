@@ -92,9 +92,9 @@ function hutController() {
 function moveHut() {
     hut.hutX -= 10;
 
-    if (seagullX - 30 >= hut.hutX - 35 && 
-        seagullX - 30 <= hut.hutX + 35 && 
-        seagullY - 50 >= hut.hutY - 25 && 
+    if (seagullX - 30 >= hut.hutX - 35 &&
+        seagullX - 30 <= hut.hutX + 35 &&
+        seagullY - 50 >= hut.hutY - 25 &&
         seagullY - 50 <= hut.hutY + 65) {
         topLeft = 1;
     }
@@ -211,11 +211,11 @@ function gameLoop() {
 
         drawBackground();
         //consolidate variables containing inputs
-        gullJump =0;
+        gullJump = 0;
         if (keysPressed[32] == true || mouseClicked == true || screenTouched == true) {
             gullJump = 1;
         }
-        
+
         //if the gull is in the air, apply gravity
         if (gullState == 1) {
             acceleration += gravity;
@@ -237,7 +237,7 @@ function gameLoop() {
 
         seagullLand();
         seagullJump();
-    
+
     } else if (stopGame == true) {
         //start the game
         if (keysPressed[32] == true && gameOver == false) {
@@ -274,9 +274,9 @@ function gameLoop() {
     ctx.drawImage(seagull, seagullX - 90, seagullY - 65);
     setTimeout(gameLoop, 1000 / speed);
     screenTouched = false;
-    document.getElementById("jump").onclick = function(e) {
+    document.getElementById("jump").onclick = function (e) {
         screenTouched = true;
-    } ;
+    };
 }
 
 //check for key input
@@ -298,7 +298,7 @@ canvas.onmouseup = function (e) {
 window.ontouchstart = function (e) {
     screenTouched = true;
 };
-window.ontouchend = function(e) {
+window.ontouchend = function (e) {
     screenTouched = false;
 };
 
