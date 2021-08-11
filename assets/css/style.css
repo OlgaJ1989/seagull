@@ -54,13 +54,12 @@ canvas {
     background-color: #2E5077; 
     width: 500px;
     height: 400px;
-    position: absolute;
-    left: 44%;
-    top: 53%; 
-    margin-left: -150px;
-    margin-top: -150px;
     border-radius: 25px;
     border: 3px solid white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modal-content {
