@@ -45,6 +45,10 @@ canvas {
     color: white;
 }
 
+#jump {
+    margin-top: 30px;
+}
+
 /*Modal*/
 
 .modal {
