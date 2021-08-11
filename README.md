@@ -20,9 +20,10 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
     * The hero of the game is a seagull which the user can control by pressing the spacebar or the Jump button. The sole action of the seagull is a jump.
 5. Obstacle
     * There are two obstacles that the seagull needs to jump over: a deck chair and a beach hut. The obstacles appear at random intervals, making it harder for the user to predict their next move, especially with the speed increasing.
-6. Game controls: Jump button and spacebar
+6. Game controls: spacebar, Jump button and touch / tap event 
     * Spacebar - main means of controlling the game. When pressed, the seagull jumps in the air, being able to avoid obstacles. 
     * Jump button - introduced to make the game playable on a touchscreen device, such as a mobile phone or tablet. However, it can also be used on a computer as an alternative to spacebar.
+    * touch / tap - works solely on a touchscreen device. You can tap anywhere on the page to start the game an make the seagull jump.
 
     ![Game features](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/game1.PNG)
 
@@ -41,6 +42,11 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
 10. Footer
     * Present solely for semantic markup purposes, the footer contains a short sentence stating that the game was created by me for educational purposes. 
+
+11. Favicon
+    * A favicon has been added to make it easier for users to find the Sussex Walks page if multiple tabs are open.
+
+    ![Favicon](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/favicon.PNG)
 
 ### Features left to implement
 
@@ -111,6 +117,13 @@ I am considering adding more obstacles to make the game more interesting and var
     * Result:
         * The Jump button works as intended on both device types / screen sizes. 
 
+* Check that the seagull jumps when screen tapped (only touchscreen devices).
+    * Test:
+        1. Open the game on a Samsung S8 smartphone and a Samsung tablet.
+        1. Start the game by tapping anywhere on the screen and play for a while to make sure the screen responds to every tap / touch. 
+    * Result:
+        * The tap/touch event works as intended on both touchsecreen device types / screen sizes. 
+
 * Check that the score increases while the game progresses.
     * Test:
         1. Open the game and press spacebar or Jump button to launch it.
@@ -128,13 +141,17 @@ I am considering adding more obstacles to make the game more interesting and var
 
 ### Validator testing
 
-* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received 4 errors:
-    * Two identical error notifications referring to the seagull and background elements: "Element img is missing required attribute src.". This is not an actual error as the reason there is no src attribute is that these images have been uploaded and drawn onto canvas using JavaScript and connected to the img elements with their id attributes.
-    * Two more identical error notifications also referring to the seagull and background elements: "An img element must have an alt attribute, except under certain conditions." As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.
+* HTML - no errors were found when code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) 
+
+![HTML Validation](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/html-validation.PNG)
 
 * CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
+![CSS Validation](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/css-validation.PNG)
+
 * JavaScript - when running the code through [JShint](jshint.com) linter I received the following error message referring to every single let variable I have: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". After doing some research, I have learnt that this has nothing to do with my code being faulty but rather a glitch caused by JShint. I followed advice from [this Stackoverflow post](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) and copied /*jshint esversion: 6 */ into the linter window to override this. After I did this, no more errors appeared.  
+
+![JS Validation](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/js-validation.PNG)
 
 * Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
     * Similarly to what happened when I was testing the HTML code, I received a warning that read "Missing alt text" on the seagull and background images. As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.

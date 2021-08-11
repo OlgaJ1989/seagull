@@ -299,7 +299,7 @@ window.ontouchstart = function (e) {
     screenTouched = true;
 };
 window.ontouchend = function(e) {
-    screenTouched =false;
+    screenTouched = false;
 };
 
 //Restart game
