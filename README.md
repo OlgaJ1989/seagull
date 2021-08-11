@@ -46,6 +46,7 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
 I am considering adding more obstacles to make the game more interesting and varied, possibly placing some of the obstacles in the air.  
 
+
 ## Technologies
 
 * HTML has been used to structure the website.
@@ -63,6 +64,8 @@ I am considering adding more obstacles to make the game more interesting and var
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) was used to run an audit of the website. 
 
+    ![Lighthouse report](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/lighthouse.png)
+
 ## Testing
 
 * Check the responsiveness of the website on different screen sizes across different browsers (Chrome, Firefox, Opera).
@@ -73,44 +76,60 @@ I am considering adding more obstacles to make the game more interesting and var
     * Result:
         * All elements are responsive and display correctly in each of the browsers and in each of the window sizes.
 
-* Check that the links in the navigation bar navigate to correct pages. 
+* Check that the Start button displays the instructions modal when pressed. 
     * Test:
         1. Open the website in a browser.
-        1. Click on all navigation items (Home, Walking Tips, Gallery, Contact Us) one by one to make sure the attached links are correct and that they lead the user to the correct parts of the website.
+        1. Click on the Start button to make sure that it correctly opens up the modal and its content. 
     * Result:
-        * All links working and directing user to the correct pages.
+        * The button is working as expected.
 
-* Check that the links to social media pages in the Footer work and open in new tabs.
+* Check that the Restart button works as expected by refreshing the page when clicked.
     * Test:
         1. Open the website in a browser.
-        1. Click on all social media links (Facebook, Twitter, YouTube, Instagram) one by one to make sure that the links are in working order and that they all open in a separate tab.
+        1. Press spacebar to start the game and collide with an obstacle on purpose to trigger a Game Over event.
+        1. Press the Restart button to see if it refreshes the page correctly, allowing the user to play again.
     * Result:
-        * All links are working and all of them open in separate / new tabs.
+        * The page refreshes as expected and the player can play again.
 
-* Check that the name of the page user is currently on is highlighted (underlined) in the navigation bar.
+* Check that the seagull jumps when spacebar clicked.
     * Test:
         1. Open the website.
-        1. Open each of the pages in the navigation bar to see whether the active page is underlined in the menu.
+        1. Start the game by pressing spacebar and play for a while to make sure spacebar responds to every click.
     * Result:
-        * Each of the navigation bar elements becomes underlined when the page is active.
-    
-* Check that each of the navigation bar elements displays as underlined when hovered over.
+        * Spacebar works as intended by launching the seagull into the air every time it is pressed.
+
+* Check that the seagull jumps when Jump button clicked on a computer / laptop.
     * Test:
         1. Open the website.
-        1. Hover over each of the navigation bar elements with the cursor to make sure that they display and underline when hovered over. 
+        1. Start the game by pressing the Jump button and play for a while to make sure the button responds to every click.
     * Result:
-        * Each element becomes udenrlined when hovered over with a mouse cursor.
-                
-* Check validation of the Contact Us form.
+        * The Jump button works as intended by launching the seagull into the air every time it is pressed.
+
+* Check that the seagull jumps when Jump button clicked on a touchscreen device.
     * Test:
-        1. Open the website in a browser and navigate to the Contact Us page.
-        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
-    * Result: 
-        * The form cannot be submitted until each of the input fields has been filled in correctly so the validation is working.
+        1. Open the game on a Samsung S8 smartphone and a Samsung tablet.
+        1. Start the game by pressing the Jump button and play for a while to make sure the button responds to every click.
+    * Result:
+        * The Jump button works as intended on both device types / screen sizes. 
+
+* Check that the score increases while the game progresses.
+    * Test:
+        1. Open the game and press spacebar or Jump button to launch it.
+        1. While playing, have an eye on the score counter to make sure it increases accordingly (including extra 50 points being added for each jump over an obstacle).
+    * Result:
+        * The score increases as expected.
+        
+* Check that the game speed increases gradually .
+    * Test:
+        1. Open the game and press spacebar or Jump button to launch it.
+        1. Play for as long as possible to see if the speed changes.  
+    * Result:
+        * Speed increases as expected. 
+
 
 ### Validator testing
 
-* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received the following error notification: "Element h3 not allowed as child of element label in this context." referring to all input labels in the Contact Us form. To fix this, I have changed all h3 elements to span elements as per the advice found in [this Stackoverflow post](https://stackoverflow.com/questions/50068995/element-h3-not-allowed-as-child-of-element-label-in-this-context-html). No further errors have been found after I applied this fix and passed the code through the validator again.
+* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received two identical error notifications referring to the seagull and background elements: "Element img is missing required attribute src.". This is not an actual error as the reason there is no src attribute is that these images have been uploaded and drawn onto canvas using JavaScript and connected to the img elements with their id attributes. No further errors have been found after I applied this fix and passed the code through the validator again.
 * CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
 * Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
     * There was not enough contrast between the background and font of the 'Submit' button in the Contact Us form. I have corrected this by changing the background color #559e79 to #32644b. No further errors have been found after I applied this fix and passed the site through the validator again.
