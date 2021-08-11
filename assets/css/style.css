@@ -101,6 +101,37 @@ p {
     text-align: center;
   }
 
+/*404 page*/
+
+#four-o-four, #not-found {
+    font-family: Indie Flower, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#four-o-four h1 {
+    font-size: 130px;
+    margin: 10px;
+}
+
+#not-found h2 {
+    font-size: 50px;
+    margin: 10px;
+}
+
+#error p {
+    font-size: 30px;
+    margin: 5px;
+}
+
+#return a {
+    font-family: Indie Flower, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    color: yellow;
+}
+
 /* Media Queries */
 
 @media (max-width: 1060px) {
