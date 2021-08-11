@@ -275,14 +275,6 @@ function gameLoop() {
         screenTouched = true;
     } ;
 };
-/*
-document.getElementById("jump").ontouchstart = function(e) {
-    screenTouched = true;
-} ;
-document.getElementById("jump").ontouchend = function(e) {
-    screenTouched = false;
-} ;
-*/
 
 //check for key input
 window.onkeyup = function (e) {

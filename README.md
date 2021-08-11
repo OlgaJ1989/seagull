@@ -1,6 +1,6 @@
 # Chip Raider
 
-Chip Raider is a game in which the user takes a form of a seagull jumping over obstacles on the beach. This simple game is targeted at casual players of any age but it may appeal especially to lovers of classic arcade games.
+Chip Raider is a game in which the user takes a form of a seagull jumping over obstacles on the beach. Its aim is to survive as long as possible, with the speed increasing almost constantly. This simple game is targeted at casual players of any age but it may appeal especially to lovers of classic arcade games.
 
 The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
@@ -10,52 +10,41 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
 ### Existing features
 
-![Game features](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/game1.PNG)
-
 1. Start button
-* Start button   
-    * When clicked, Includes direct links to the Home, Walking Tips, Gallery, and Contacts Us pages, allowing the user to easily navigate between them. 
+    * When clicked, the button opens a modal with instructions on how to play the game. After getting acquainted with the instructions, the user can close the modal and start the game as per the instructions (by pressing spacebar on a computer or the Jump button on a touchscreen device). 
+2. Restart button
+    * When a user hits an obstacle and looses the game, they can press the Restart button to refresh the page and be able to start the game from the beginning. 
+3. Score 
+    * The score increases by 1 point with every iteration of the game loop which happens faster the longer the player survives. The score is showing increments of 10 to prevent it becoming too distracting. For every obstacle jumped, the user gets 50 points extra added to the score.
+4. Seagull (player avatar)
+    * The hero of the game is a seagull which the user can control by pressing the spacebar or the Jump button. The sole action of the seagull is a jump.
+5. Obstacle
+    * There are two obstacles that the seagull needs to jump over: a deck chair and a beach hut. The obstacles appear at random intervals, making it harder for the user to predict their next move, especially with the speed increasing.
+6. Game controls: Jump button and spacebar
+    * Spacebar - main means of controlling the game. When pressed, the seagull jumps in the air, being able to avoid obstacles. 
+    * Jump button - introduced to make the game playable on a touchscreen device, such as a mobile phone or tablet. However, it can also be used on a computer as an alternative to spacebar.
 
-    ![Navigation](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/navigation.png)
+    ![Game features](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/game1.PNG)
 
-* Landing page image with overlaying page title
-    * The home.html page (Home) includes a picture of the countryside, with the title of the wesbsite, Sussex Walks, added as overlaying text. The title acts as a centerpiece of the image and catches the eye instantly.
+7. Modal
+    * The modal comes up when the Start button is pressed and displays short instructions on how to play the game. Once read, it can be closed by clicking/tapping the red cross.
 
-    ![Title](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/title.png)
+    ![Modal](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/modal.png) 
 
-* Intro
-    * A small section explaining the purpose of the website and the type of walks people can find in Sussex. 
+8. Game Over warning/message
+    * When the seagull finally collides with an obstacle, the game is stopped and the user is greated with a 'Game Over!' announcement. They can then press the Restart button and start the game again.
 
-    ![Intro](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/intro.png)
+    ![Game Over](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/over.PNG)  
 
-* Popular Walks section
-    * A section describing four chosen walks with images from along the routes and embedded Google maps for each. The images clearly showcase the landmarks walkers can expect to see and the clickable maps provide the exact route. The design is responsive - users will see 4 columns next to each other on bigger screens and 1 column at a time on smaller devices.
+9. Header 
+    * The sole role of the header in this project is to display the name of the game. There are no clickable elements or navigation as the project consists of only one page.
 
-    ![Walks](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/walks.png)
-
-* Interactive footer across all pages
-    * It consists of clickable icons linking the user to a choice of social media platforms (Facebook, Instagram, YouTube, Twitter). All links open in new tabs so the user does not have to leave the Sussex Walks page.
-
-    ![Footer](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/footer.png)
-
-* Gallery
-    * The Gallery located in gallery.html will provide the user with a collection of photographs showcasing landmarks they will be able to see during their walks. Responsive design of the gallery means the images will still be viewed in a good reolution on a smaller screen.
-
-    ![Gallery](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/gallery.png)  
-
-* Contact Us form
-    * The contact.html page consists of a form which users can use in order to contact the admin with any questions / queries. 
-    
-    ![Form](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/form.png)
-
-* A favicon
-    * A favicon has been added to make it easier for users to find the Sussex Walks page if multiple tabs are open. 
-    
-    ![Favicon](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/favicon.png)
+10. Footer
+    * Present solely for semantic markup purposes, the footer contains a short sentence stating that the game was created by me for educational purposes. 
 
 ### Features left to implement
 
-I would like to include another page consisting of a form and called Design Your Walk or similar. The form would consist of a short survey, covering areas such as difficulty, length, and type of a walk. Radio buttons and checkboxes would be provided for the user to be able to make their choices, which they could then submit to the admin to receive personalised walk ideas tailored to their choices.  
+I am considering adding more obstacles to make the game more interesting and varied, possibly placing some of the obstacles in the air.  
 
 ## Technologies
 
