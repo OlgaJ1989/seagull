@@ -105,6 +105,42 @@ p {
     }
 }
 
+@media (max-width: 540px) {
+    .modal {
+        width: 90%;
+        height: 300px;
+    }
+
+    .modal-content {
+        font-size: 16px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 530px) {
+    .modal {
+        width: 90%;
+        height: 250px;
+    }
+
+    .modal-content {
+        font-size: 13px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 462px) {
+    .modal {
+        width: 90%;
+        height: 250px;
+    }
+
+    .modal-content {
+        font-size: 10px;
+        width: 80%;
+    }
+}
+
 @media (max-width: 330px) {
     header {
         font-size: 15px;
