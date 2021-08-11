@@ -48,6 +48,11 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
     ![Favicon](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/favicon.PNG)
 
+12. Custom 404 page
+    * A custom 404 page has been made to make it easy for the user to come back to the game page after they tried to move to a non-existent page. 
+
+    ![404](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/404.png)
+
 ### Features left to implement
 
 I am considering adding more obstacles to make the game more interesting and varied, possibly placing some of the obstacles in the air.  
@@ -131,7 +136,7 @@ I am considering adding more obstacles to make the game more interesting and var
     * Result:
         * The score increases as expected.
         
-* Check that the game speed increases gradually .
+* Check that the game speed increases gradually.
     * Test:
         1. Open the game and press spacebar or Jump button to launch it.
         1. Play for as long as possible to see if the speed changes.  
