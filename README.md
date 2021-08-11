@@ -10,8 +10,11 @@ The game can be accessed [here](https://olgaj1989.github.io/seagull/).
 
 ### Existing features
 
-* Navigation Bar 
-    * Includes direct links to the Home, Walking Tips, Gallery, and Contacts Us pages, allowing the user to easily navigate between them. 
+![Game features](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/game1.PNG)
+
+1. Start button
+* Start button   
+    * When clicked, Includes direct links to the Home, Walking Tips, Gallery, and Contacts Us pages, allowing the user to easily navigate between them. 
 
     ![Navigation](https://github.com/OlgaJ1989/sussex-walks/blob/master/docs/navigation.png)
 
