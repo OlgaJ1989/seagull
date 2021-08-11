@@ -64,7 +64,6 @@ I am considering adding more obstacles to make the game more interesting and var
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) was used to run an audit of the website. 
 
-    ![Lighthouse report](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/lighthouse.png)
 
 ## Testing
 
@@ -129,15 +128,24 @@ I am considering adding more obstacles to make the game more interesting and var
 
 ### Validator testing
 
-* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received two identical error notifications referring to the seagull and background elements: "Element img is missing required attribute src.". This is not an actual error as the reason there is no src attribute is that these images have been uploaded and drawn onto canvas using JavaScript and connected to the img elements with their id attributes. No further errors have been found after I applied this fix and passed the code through the validator again.
-* CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received 4 errors:
+    * Two identical error notifications referring to the seagull and background elements: "Element img is missing required attribute src.". This is not an actual error as the reason there is no src attribute is that these images have been uploaded and drawn onto canvas using JavaScript and connected to the img elements with their id attributes.
+    * Two more identical error notifications also referring to the seagull and background elements: "An img element must have an alt attribute, except under certain conditions." As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser:
+
+    ![Alt error](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/alt-error.png)
+
+* CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+* JavaScript - when running the code through [JShint] linter I received the following error message referring to every single let variable I have: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". After doing some research, I have learnt that this has nothing to do with my code being faulty but rather a glitch caused by JShint. I follwed advice from [this Stackoverflow post](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) and copied /*jshint esversion: 6 */ into the linter window to override this. After I did this, no more errors appeared.  
+
 * Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
-    * There was not enough contrast between the background and font of the 'Submit' button in the Contact Us form. I have corrected this by changing the background color #559e79 to #32644b. No further errors have been found after I applied this fix and passed the site through the validator again.
-    * Two of the aria-labels in the Gallery page were identical. I have corrected this by changing the name of one of them. No further errors have been found after I applied thise fix and passed the site through the validator again.
+    * Similarly to what happened when I was testing the HTML code, I received a warning that read "Missing alt text" on the seagull and background images. As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.
+    
 
 ### Unfixed bugs
 
 No other bugs found.
+
 
 ## Deployment
 

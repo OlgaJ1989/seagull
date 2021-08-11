@@ -212,10 +212,7 @@ function gameLoop() {
         if (keysPressed[32] == true || mouseClicked == true || screenTouched == true) {
             gullJump = 1;
         }
-         /*
-        else if (keysPressed[32] == false) {
-            gullJump = 0;
-        }*/
+        
         //if the gull is in the air, apply gravity
         if (gullState == 1) {
             acceleration += gravity;
@@ -274,7 +271,7 @@ function gameLoop() {
     document.getElementById("jump").onclick = function(e) {
         screenTouched = true;
     } ;
-};
+}
 
 //check for key input
 window.onkeyup = function (e) {
