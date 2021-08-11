@@ -130,13 +130,11 @@ I am considering adding more obstacles to make the game more interesting and var
 
 * HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) I have received 4 errors:
     * Two identical error notifications referring to the seagull and background elements: "Element img is missing required attribute src.". This is not an actual error as the reason there is no src attribute is that these images have been uploaded and drawn onto canvas using JavaScript and connected to the img elements with their id attributes.
-    * Two more identical error notifications also referring to the seagull and background elements: "An img element must have an alt attribute, except under certain conditions." As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser:
-
-    ![Alt error](https://raw.githubusercontent.com/OlgaJ1989/seagull/main/docs/alt-error.png)
+    * Two more identical error notifications also referring to the seagull and background elements: "An img element must have an alt attribute, except under certain conditions." As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.
 
 * CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-* JavaScript - when running the code through [JShint] linter I received the following error message referring to every single let variable I have: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". After doing some research, I have learnt that this has nothing to do with my code being faulty but rather a glitch caused by JShint. I follwed advice from [this Stackoverflow post](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) and copied /*jshint esversion: 6 */ into the linter window to override this. After I did this, no more errors appeared.  
+* JavaScript - when running the code through [JShint](jshint.com) linter I received the following error message referring to every single let variable I have: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". After doing some research, I have learnt that this has nothing to do with my code being faulty but rather a glitch caused by JShint. I followed advice from [this Stackoverflow post](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) and copied /*jshint esversion: 6 */ into the linter window to override this. After I did this, no more errors appeared.  
 
 * Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I received 2 errors:
     * Similarly to what happened when I was testing the HTML code, I received a warning that read "Missing alt text" on the seagull and background images. As I mentioned above, the seagull sprite and the background image have been loaded and drawn to canvas with JavaScript and as such, they don't 'exist' in HTML. If I use alt text on these img elements in HTML, I run into an error when I load the game. HTML cannot find the images and so loads the alt text onto the page in every browser.
@@ -144,33 +142,37 @@ I am considering adding more obstacles to make the game more interesting and var
 
 ### Unfixed bugs
 
-No other bugs found.
+No other bugs found apart from the ones outlined above.
 
 
 ## Deployment
 
-Sussex Walks was deployed to GitHub Pages by following the below steps:
-1. Navigate to the ['sussex-walks' repository](https://github.com/OlgaJ1989/sussex-walks) on GitHub.
+Chip Raider was deployed to GitHub Pages by following the below steps:
+1. Navigate to the ['seagull' repository](https://github.com/OlgaJ1989/seagull) on GitHub.
 1. Navigate to the 'Settings' tab.
 1. Navigate to 'Pages' from the menu on the left. 
 1. Select 'master' branch in the source drop-down.
 1. Click 'Save'.
-1. A link to the live deployed page is generated and can be found here: https://olgaj1989.github.io/sussex-walks/
+1. A link to the live deployed page is generated and can be found here: https://olgaj1989.github.io/seagull/
 
 ## Credits
 
 ### Content 
 
-The written content has been developed by me, Olga Jasinska, using my past experience of walking in and around of Brighton. 
+The written content has been developed and coded by me, Olga Jasinska. 
 
 ### Media 
 
-All photos have been taken from my private collection or provided by my partner Ben Butler with his permission. 
+The canvas background photo of Brighton beach has been taken from my private collection.
+The PNG seagull image used for the game sprite / player object has been taken from [Pngaaa.com](https://www.pngaaa.com/detail/821664). 
+The deck chair PNG has been taken from [Pngaaa.com](https://www.pngaaa.com/detail/2411025).
+The beach hut PNG has been taken from [SubPGN.com](https://www.subpng.com/png-ssdmom/download.html)
+I do not own rights to any of the above-mentioned content - I have used it solely for educational purposes.
 
 ### Code
 
-When creating flexbox and media queries I used tutorials and some base code from [W3Schools](https://www.w3schools.com/css/css3_flexbox.asp) modules on CSS Flexbox and CSS Flex Responsive.  
+When creating media queries and the modal, I used tutorials and some base code from [W3Schools](https://www.w3schools.com/css/css3_flexbox.asp) modules on CSS Flexbox and Modal Boxes.  
 
 ### Acknowledgements
 
-I'd like to thank my mentor Daisy McGirr for her guidance throughout this project.
+As usual, I'd like to thank my mentor Daisy McGirr for her guidance throughout this project.

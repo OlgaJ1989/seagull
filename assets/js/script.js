@@ -196,6 +196,7 @@ function drawChair() {
     ctx.drawImage(chairImg, chair.chairX - 45, chair.chairY - 30);
 }
 
+//Draw the score onto canvas
 function drawScore() {
     ctx.fillStyle = "white";
     ctx.font = "30px Indie Flower";
@@ -204,10 +205,12 @@ function drawScore() {
 
 //Main game loop
 function gameLoop() {
+    //check game state
     if (stopGame == false) {
         score++;
 
         drawBackground();
+        //consolidate variables containing inputs
         gullJump =0;
         if (keysPressed[32] == true || mouseClicked == true || screenTouched == true) {
             gullJump = 1;
@@ -234,14 +237,16 @@ function gameLoop() {
 
         seagullLand();
         seagullJump();
-
+    
     } else if (stopGame == true) {
+        //start the game
         if (keysPressed[32] == true && gameOver == false) {
             stopGame = false;
         }
         if (screenTouched == true && gameOver == false) {
             stopGame = false;
         }
+        //game over message
         if (gameOver == true) {
             ctx.fillStyle = 'yellow';
             ctx.font = '150px Indie Flower';
@@ -258,6 +263,7 @@ function gameLoop() {
 
     drawScore();
 
+    //increase game speeddepending on score
     if (score % 100 == 0 && score > 0) {
         speed += 4;
     }
@@ -289,7 +295,6 @@ canvas.onmouseup = function (e) {
     console.log(mouseClicked);
 };
 //check for mobile input
-
 window.ontouchstart = function (e) {
     screenTouched = true;
 };
